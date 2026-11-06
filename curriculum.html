@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>커리큘럼 — Code ML</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>Code ML</a>
+    <nav class="nav-links">
+      <a href="curriculum.html" class="is-active">커리큘럼</a>
+      <a href="learn.html">문제풀기</a>
+      <a href="mypage.html">마이페이지</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="login.html">로그인</a>
+      <a class="btn btn-primary" href="signup.html">시작하기</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <span class="tag">AI 마스터 코스</span>
+      <h1 class="h1">AI 커리큘럼</h1>
+      <p class="body-l muted">기초 개념부터 머신러닝까지, 단계마다 개념을 공부하고 파이썬 문제로 확인하세요.</p>
+    </section>
+
+    <div class="curri-body">
+      <aside class="sidebar">
+        <div class="panel panel-subtle">
+          <span class="small strong muted">전체 진행률</span>
+          <span class="h1" id="overallPct">32%</span>
+          <div class="progress"><span id="overallBar" style="--p:32%"></span></div>
+          <span class="caption faint">총 5단계 중 1단계 완료, 2단계 진행 중</span>
+        </div>
+        <div class="panel gap-12" id="goals">
+          <span class="small strong muted">학습 목표</span>
+          <button class="goal" type="button">AI 기초 이해</button>
+          <button class="goal is-selected" type="button">코딩테스트 대비</button>
+          <button class="goal" type="button">프로젝트 만들기</button>
+        </div>
+      </aside>
+
+      <div class="curri-list">
+        <article class="item is-done">
+          <div class="badge">✓</div>
+          <div class="item-text">
+            <h2 class="h3 item-title">AI 기초 개념</h2>
+            <p class="small muted">인공지능, 머신러닝, 딥러닝의 차이와 용어를 정리해요.</p>
+            <span class="caption faint">개념 6 · 문제 4</span>
+          </div>
+          <div class="item-progress"><span class="small strong muted">8 / 8</span><div class="progress is-done"><span style="--p:100%"></span></div></div>
+          <a class="btn btn-outline" href="learn.html">복습하기</a>
+        </article>
+        <article class="item is-current">
+          <div class="badge">2</div>
+          <div class="item-text">
+            <h2 class="h3 item-title">파이썬 기초</h2>
+            <p class="small muted">변수, 조건문, 반복문, 함수를 코딩테스트로 익혀요.</p>
+            <span class="caption faint">개념 8 · 문제 12</span>
+          </div>
+          <div class="item-progress"><span class="small strong muted">5 / 12</span><div class="progress"><span style="--p:41.6%"></span></div></div>
+          <a class="btn btn-accent" href="learn.html">이어하기</a>
+        </article>
+        <article class="item is-locked">
+          <div class="badge">3</div>
+          <div class="item-text">
+            <h2 class="h3 item-title">데이터 다루기</h2>
+            <p class="small muted">리스트와 딕셔너리로 데이터를 정리하고 계산해요.</p>
+            <span class="caption faint">개념 6 · 문제 10</span>
+          </div>
+          <div class="item-progress"><span class="small strong muted">0 / 10</span><div class="progress"><span style="--p:0%"></span></div></div>
+          <span class="btn btn-outline is-locked">잠김</span>
+        </article>
+        <article class="item is-locked">
+          <div class="badge">4</div>
+          <div class="item-text">
+            <h2 class="h3 item-title">머신러닝 기초</h2>
+            <p class="small muted">데이터로 규칙을 찾는 모델의 원리를 이해해요.</p>
+            <span class="caption faint">개념 8 · 문제 8</span>
+          </div>
+          <div class="item-progress"><span class="small strong muted">0 / 8</span><div class="progress"><span style="--p:0%"></span></div></div>
+          <span class="btn btn-outline is-locked">잠김</span>
+        </article>
+        <article class="item is-locked">
+          <div class="badge">5</div>
+          <div class="item-text">
+            <h2 class="h3 item-title">딥러닝 입문</h2>
+            <p class="small muted">신경망의 구조와 학습 과정을 직접 구현해 봐요.</p>
+            <span class="caption faint">개념 6 · 문제 6</span>
+          </div>
+          <div class="item-progress"><span class="small strong muted">0 / 6</span><div class="progress"><span style="--p:0%"></span></div></div>
+          <span class="btn btn-outline is-locked">잠김</span>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="col gap-12"><span class="h3">Code ML</span><p class="faint">AI를 배우고, 파이썬으로 직접 풀어보세요.</p></div>
+      <div class="footer-cols">
+        <div class="footer-col"><strong class="small">학습</strong><a href="curriculum.html">커리큘럼</a><a href="learn.html">문제풀기</a><a href="learn.html">개념 정리</a></div>
+        <div class="footer-col"><strong class="small">계정</strong><a href="login.html">로그인</a><a href="signup.html">회원가입</a><a href="mypage.html">마이페이지</a></div>
+      </div>
+    </div>
+    <p class="caption faint">© 2026 Code ML. 반 친구들을 위한 학습 프로젝트.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

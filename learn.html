@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>학습하기 — Code ML</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>Code ML</a>
+    <nav class="nav-links">
+      <a href="curriculum.html">커리큘럼</a>
+      <a href="learn.html" class="is-active">문제풀기</a>
+      <a href="mypage.html">마이페이지</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="login.html">로그인</a>
+      <a class="btn btn-primary" href="signup.html">시작하기</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="subhead">
+      <div class="tabs" id="tabs" role="tablist">
+        <button class="tab is-active" data-tab="problem" role="tab">문제</button>
+        <button class="tab" data-tab="concept" role="tab">기본 개념</button>
+        <button class="tab" data-tab="history" role="tab">제출 목록</button>
+        <button class="tab" data-tab="solution" role="tab">해설</button>
+      </div>
+      <div class="crumb small"><span class="faint">파이썬 기초</span><span class="faint">/</span><span class="strong muted">문제 3 · 5 / 12</span></div>
+    </div>
+
+    <div class="learn-body">
+      <section class="problem">
+        <div data-pane="problem" class="is-visible">
+          <div class="col gap-12">
+            <div class="row gap-8"><span class="tag">Lv.1</span><span class="tag">함수</span></div>
+            <h1 class="h2">두 수의 합 구하기</h1>
+            <p class="muted">정수 a와 b가 주어질 때, a와 b의 합을 반환하는 함수 solution을 완성하세요.</p>
+          </div>
+          <div class="col gap-8">
+            <h2 class="h3">제한 사항</h2>
+            <ul class="muted" style="padding-left:20px"><li>-1,000 ≤ a, b ≤ 1,000</li><li>a와 b는 정수입니다.</li></ul>
+          </div>
+          <div class="col gap-12">
+            <h2 class="h3">입출력 예</h2>
+            <div class="example"><div><span class="caption faint">a</span><span class="mono">3</span></div><div><span class="caption faint">b</span><span class="mono">5</span></div><div><span class="caption faint">return</span><span class="mono">8</span></div></div>
+            <div class="example"><div><span class="caption faint">a</span><span class="mono">-2</span></div><div><span class="caption faint">b</span><span class="mono">7</span></div><div><span class="caption faint">return</span><span class="mono">5</span></div></div>
+          </div>
+        </div>
+
+        <div data-pane="concept">
+          <h2 class="h2">기본 개념 · 함수와 반환값</h2>
+          <p class="muted">함수는 입력(매개변수)을 받아 결과(반환값)를 돌려주는 코드 묶음이에요. <span class="mono">return</span>으로 값을 돌려주면, 함수를 부른 곳에서 그 값을 사용할 수 있어요.</p>
+          <div class="panel panel-subtle"><span class="mono">def add(x, y):<br>&nbsp;&nbsp;&nbsp;&nbsp;return x + y</span></div>
+        </div>
+
+        <div data-pane="history">
+          <h2 class="h2">제출 목록</h2>
+          <div class="table" id="historyTable">
+            <div class="tr th"><span class="c-title">제출</span><span class="c-result">결과</span><span class="c-time">시간</span></div>
+            <p class="small faint" id="historyEmpty" style="padding:16px 0">아직 제출한 기록이 없어요.</p>
+          </div>
+        </div>
+
+        <div data-pane="solution">
+          <h2 class="h2">해설</h2>
+          <p class="muted">두 수를 더한 값을 <span class="mono">return</span>하면 돼요. 음수가 섞여도 <span class="mono">a + b</span> 그대로 계산됩니다.</p>
+          <div class="panel panel-subtle"><span class="mono">def solution(a, b):<br>&nbsp;&nbsp;&nbsp;&nbsp;return a + b</span></div>
+        </div>
+      </section>
+
+      <section class="editor-panel">
+        <div class="toolbar">
+          <span class="lang">Python 3 <span class="faint">▾</span></span>
+          <div class="toolbar-actions">
+            <button class="btn btn-outline" id="btnReset" type="button">초기화</button>
+            <button class="btn btn-outline" id="btnRun" type="button">코드 실행</button>
+            <button class="btn btn-accent" id="btnSubmit" type="button">제출 후 채점</button>
+          </div>
+        </div>
+        <div class="editor">
+          <div class="gutter" id="gutter">1
+2
+3
+4
+5
+6</div>
+          <div class="code-area">
+            <pre class="code-hl" id="codeHl" aria-hidden="true"></pre>
+            <textarea class="code-input" id="code" spellcheck="false" aria-label="코드 입력"></textarea>
+          </div>
+        </div>
+        <div class="console">
+          <span class="small strong muted">실행 결과</span>
+          <pre id="out">&gt; 코드를 실행하면 결과가 여기에 표시돼요.</pre>
+          <div class="chips" id="chips"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 정답/오답 모달 -->
+  <div class="scrim" id="scrim" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="modal is-wrong" id="modal">
+      <div class="modal-icon" id="mIcon">✕</div>
+      <div class="col gap-8" style="align-items:center">
+        <h2 class="h2" id="mTitle">오답입니다</h2>
+        <p class="muted" id="mDesc"></p>
+      </div>
+      <div class="modal-detail" id="mDetail"></div>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="mBtn1" type="button">힌트 보기</button>
+        <button class="btn btn-primary" id="mBtn2" type="button">다시 풀기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

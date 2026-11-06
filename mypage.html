@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>마이페이지 — Code ML</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>Code ML</a>
+    <nav class="nav-links">
+      <a href="curriculum.html">커리큘럼</a>
+      <a href="learn.html">문제풀기</a>
+      <a href="mypage.html" class="is-active">마이페이지</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="login.html">로그인</a>
+      <a class="btn btn-primary" href="signup.html">시작하기</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="profile">
+      <div class="avatar">민</div>
+      <div class="col gap-4 grow">
+        <h1 class="h2">민준</h1>
+        <p class="muted">AI 마스터 코스 · 가입 12일차 · minjun@school.kr</p>
+      </div>
+      <button class="btn btn-outline" type="button">프로필 편집</button>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span class="small strong muted">연속 학습</span><span class="h1">7일</span><span class="caption faint">어제부터 이어지고 있어요</span></div>
+      <div class="stat"><span class="small strong muted">푼 문제</span><span class="h1">24</span><span class="caption faint">이번 주 +6문제</span></div>
+      <div class="stat"><span class="small strong muted">정답률</span><span class="h1">78%</span><span class="caption faint">제출 31회 중 24회 정답</span></div>
+      <div class="stat"><span class="small strong muted">현재 단계</span><span class="h1">2 / 5</span><span class="caption faint">파이썬 기초 진행 중</span></div>
+    </section>
+
+    <div class="my-body">
+      <div class="my-left">
+        <div class="panel gap-24">
+          <h2 class="h3">단계별 진행</h2>
+          <div class="stage-row"><span class="name">AI 기초 개념</span><div class="progress is-done"><span style="--p:100%"></span></div><span class="count">8 / 8</span></div>
+          <div class="stage-row"><span class="name">파이썬 기초</span><div class="progress"><span style="--p:41.6%"></span></div><span class="count">5 / 12</span></div>
+          <div class="stage-row"><span class="name">데이터 다루기</span><div class="progress"><span style="--p:0%"></span></div><span class="count">0 / 10</span></div>
+          <div class="stage-row"><span class="name">머신러닝 기초</span><div class="progress"><span style="--p:0%"></span></div><span class="count">0 / 8</span></div>
+          <div class="stage-row"><span class="name">딥러닝 입문</span><div class="progress"><span style="--p:0%"></span></div><span class="count">0 / 6</span></div>
+        </div>
+
+        <div class="panel gap-0">
+          <div class="row between" style="padding-bottom:16px"><h2 class="h3">최근 제출</h2><a class="small strong muted" href="learn.html">전체 보기 →</a></div>
+          <div class="table">
+            <div class="tr th"><span class="c-title">문제</span><span class="c-result">결과</span><span class="c-lang">언어</span><span class="c-time">제출 시간</span></div>
+            <div class="tr"><span class="c-title">두 수의 합 구하기</span><span class="c-result"><span class="chip ok">정답</span></span><span class="c-lang">Python 3</span><span class="c-time">방금 전</span></div>
+            <div class="tr"><span class="c-title">짝수와 홀수 판별</span><span class="c-result"><span class="chip fail">오답</span></span><span class="c-lang">Python 3</span><span class="c-time">2시간 전</span></div>
+            <div class="tr"><span class="c-title">리스트 최댓값 찾기</span><span class="c-result"><span class="chip ok">정답</span></span><span class="c-lang">Python 3</span><span class="c-time">어제</span></div>
+            <div class="tr"><span class="c-title">문자열 뒤집기</span><span class="c-result"><span class="chip ok">정답</span></span><span class="c-lang">Python 3</span><span class="c-time">어제</span></div>
+            <div class="tr"><span class="c-title">구구단 출력하기</span><span class="c-result"><span class="chip ok">정답</span></span><span class="c-lang">Python 3</span><span class="c-time">2일 전</span></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="my-right">
+        <div class="panel">
+          <h2 class="h3">학습 기록 (최근 14주)</h2>
+          <div class="heatmap" id="heatmap" aria-label="학습 기록 히트맵"></div>
+          <span class="caption faint">최근 3개월간 31일 학습했어요</span>
+        </div>
+        <div class="panel panel-dark">
+          <span class="tag tag-dark">다음 추천</span>
+          <h2 class="h3">조건문으로 숫자 분류하기</h2>
+          <p class="small muted">파이썬 기초 6번째 문제예요. 이어서 풀면 단계가 한 칸 더 올라가요.</p>
+          <a class="btn btn-accent btn-block" href="learn.html">이어서 풀기</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="col gap-12"><span class="h3">Code ML</span><p class="faint">AI를 배우고, 파이썬으로 직접 풀어보세요.</p></div>
+      <div class="footer-cols">
+        <div class="footer-col"><strong class="small">학습</strong><a href="curriculum.html">커리큘럼</a><a href="learn.html">문제풀기</a><a href="learn.html">개념 정리</a></div>
+        <div class="footer-col"><strong class="small">계정</strong><a href="login.html">로그인</a><a href="signup.html">회원가입</a><a href="mypage.html">마이페이지</a></div>
+      </div>
+    </div>
+    <p class="caption faint">© 2026 Code ML. 반 친구들을 위한 학습 프로젝트.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code ML — AI를 배우고, 코드로 증명하세요</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span>Code ML</a>
+    <nav class="nav-links">
+      <a href="curriculum.html">커리큘럼</a>
+      <a href="learn.html">문제풀기</a>
+      <a href="mypage.html">마이페이지</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="login.html">로그인</a>
+      <a class="btn btn-primary" href="signup.html">시작하기</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="tag">AI 입문 · Python</span>
+        <h1 class="display">AI를 배우고,<br>코드로 직접 증명하세요.</h1>
+        <p class="body-l muted">커리큘럼을 따라 개념을 익히고, 파이썬 코딩테스트로 바로 확인하는 학습 사이트.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="curriculum.html">커리큘럼 시작하기</a>
+          <a class="btn btn-outline" href="learn.html">코딩테스트 둘러보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 온보딩 스테이지: 이미지가 자동으로 바뀌며 설명 (js/main.js) -->
+    <section class="stage-wrap" aria-label="온보딩">
+      <div class="stage" id="stage" data-interval="4000">
+        <div class="art" id="stageArt" data-v="0" data-slide="0" role="img" aria-label="온보딩 일러스트">
+          <i class="a-circle"></i><i class="a-square"></i><i class="a-ring"></i>
+        </div>
+        <div class="stage-info">
+          <div class="stage-text" id="stageText" aria-live="polite">
+            <span class="tag" id="stageTag">STEP 01</span>
+            <h2 class="h1" id="stageTitle">나에게 맞는<br>커리큘럼 받기</h2>
+            <p class="muted" id="stageDesc">목표와 현재 수준을 고르면, AI 학습 순서를 자동으로 짜 드려요.</p>
+          </div>
+          <div class="stage-progress">
+            <div class="stage-bars" id="stageBars">
+              <button class="stage-bar" aria-label="1단계"></button>
+              <button class="stage-bar" aria-label="2단계"></button>
+              <button class="stage-bar" aria-label="3단계"></button>
+              <button class="stage-bar" aria-label="4단계"></button>
+            </div>
+            <p class="caption faint" id="stageCount">01 / 04 &nbsp;커리큘럼 → 개념 → 코딩테스트 → 기록</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 푸터 바로 위 페이지네이션 캐러셀 -->
+    <section class="carousel" aria-label="다음 단계">
+      <div class="carousel-head">
+        <h2 class="h2">지금, 다음 단계로 이어가기</h2>
+        <div class="pager">
+          <span class="small strong muted" id="carCount">01 / 03</span>
+          <button class="circle-btn" id="carPrev" aria-label="이전">←</button>
+          <button class="circle-btn" id="carNext" aria-label="다음">→</button>
+        </div>
+      </div>
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carTrack">
+          <a class="card" href="curriculum.html">
+            <div class="art" data-v="2"><i class="a-circle"></i><i class="a-square"></i><i class="a-ring"></i></div>
+            <div class="card-body"><span class="tag">커리큘럼</span><h3 class="h3">커리큘럼 보기</h3><p class="small muted">내 목표에 맞는 AI 학습 순서를 확인해요.</p></div>
+          </a>
+          <a class="card" href="learn.html">
+            <div class="art" data-v="1"><i class="a-circle"></i><i class="a-square"></i><i class="a-ring"></i></div>
+            <div class="card-body"><span class="tag">코딩테스트</span><h3 class="h3">첫 코딩테스트 시작</h3><p class="small muted">파이썬 문제를 풀고 바로 채점받아요.</p></div>
+          </a>
+          <a class="card" href="mypage.html">
+            <div class="art" data-v="0"><i class="a-circle"></i><i class="a-square"></i><i class="a-ring"></i></div>
+            <div class="card-body"><span class="tag">기록</span><h3 class="h3">내 학습 기록</h3><p class="small muted">푸는 중인 문제와 완료한 단계를 확인해요.</p></div>
+          </a>
+          <a class="card" href="learn.html">
+            <div class="art" data-v="2"><i class="a-circle"></i><i class="a-square"></i><i class="a-ring"></i></div>
+            <div class="card-body"><span class="tag">개념</span><h3 class="h3">기본 개념 복습</h3><p class="small muted">풀기 전에 필요한 개념을 짧게 정리해요.</p></div>
+          </a>
+          <a class="card" href="signup.html">
+            <div class="art" data-v="1"><i class="a-circle"></i><i class="a-square"></i><i class="a-ring"></i></div>
+            <div class="card-body"><span class="tag">시작</span><h3 class="h3">계정 만들기</h3><p class="small muted">회원가입하고 학습 진행을 저장해요.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="col gap-12">
+        <span class="h3">Code ML</span>
+        <p class="faint">AI를 배우고, 파이썬으로 직접 풀어보세요.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><strong class="small">학습</strong><a href="curriculum.html">커리큘럼</a><a href="learn.html">문제풀기</a><a href="learn.html">개념 정리</a></div>
+        <div class="footer-col"><strong class="small">계정</strong><a href="login.html">로그인</a><a href="signup.html">회원가입</a><a href="mypage.html">마이페이지</a></div>
+      </div>
+    </div>
+    <p class="caption faint">© 2026 Code ML. 반 친구들을 위한 학습 프로젝트.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
