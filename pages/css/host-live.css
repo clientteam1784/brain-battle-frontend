@@ -1,0 +1,16 @@
+.box { display: flex; flex-direction: column; gap: 24px; max-width: 1280px; }
+.end { height: 56px; font-size: 20px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 24px; }
+.team { display: flex; align-items: center; gap: 20px; padding: 22px; border-radius: 28px; background: var(--cream); }
+.team.first { padding: 18px; border: 4px solid var(--gold); }
+.team .rank { display: flex; flex: none; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 32px; background: #fff; font-size: 30px; font-weight: 700; }
+.team .info { display: flex; flex: 1; flex-direction: column; gap: 10px; min-width: 0; }
+.team .name { overflow: hidden; font-size: 28px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.team .state { align-self: flex-start; padding: 6px 16px; border-radius: 999px; background: #fff; color: var(--orange-dark); font-size: 17px; font-weight: 700; }
+.team .score { display: flex; flex: none; flex-direction: column; align-items: center; width: 190px; padding: 14px 22px; border-radius: 22px; background: var(--orange); box-shadow: 0 5px 0 var(--orange-dark); color: #fff; font-weight: 700; }
+.score .cap { font-size: 16px; }
+.score .digits { display: flex; align-items: flex-end; gap: 6px; line-height: 1; }
+.score .big { font-size: 76px; }
+.score .of { font-size: 28px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .team { flex-wrap: wrap; } .team .score { width: 100%; } }

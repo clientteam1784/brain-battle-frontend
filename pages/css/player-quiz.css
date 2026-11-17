@@ -1,0 +1,23 @@
+.box { display: flex; flex-direction: column; gap: 22px; max-width: 1207px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 10px; }
+.tab { width: 52px; height: 48px; border: 2px solid #ebe0d6; border-radius: 14px; background: #fff; color: var(--muted); font: 700 18px 'Noto Sans KR', sans-serif; cursor: pointer; }
+.tab.done { border-color: var(--cream); background: var(--cream); color: var(--orange-dark); }
+.tab.WRONG { color: var(--red); }
+.tab.EXHAUSTED { opacity: 0.6; }
+.tab.current { border-color: var(--orange); background: var(--orange); color: #fff; }
+.number { font-size: 72px; font-weight: 700; line-height: 1.4; }
+.lead { font-size: 18px; }
+.entry-box { display: flex; flex-direction: column; gap: 12px; }
+.answer { height: 76px; font-size: 22px; }
+.answer:disabled { background: #f6f1ea; }
+.tip { font-size: 14px; }
+.entry-box .error:empty { display: none; }
+
+/* 아래에 붙어 있는 버튼 영역 */
+.dock {
+  position: fixed; bottom: 48px; left: 50%; z-index: 3; transform: translateX(-50%);
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+  padding: 16px; border-radius: 32px; background: rgba(255, 255, 255, 0.28);
+}
+.dock .btn { width: 200px; }
+@media (max-width: 760px) { .dock .btn { width: 140px; padding: 0 12px; font-size: 17px; } .number { font-size: 48px; } }

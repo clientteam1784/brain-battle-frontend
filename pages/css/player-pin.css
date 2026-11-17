@@ -1,0 +1,2 @@
+/* 숫자를 입력하면 Figma 08 화면처럼 글자 사이를 띄운다 */
+.pin:not(:placeholder-shown) { font-size: 22px; letter-spacing: 0.5em; text-indent: 0.5em; }

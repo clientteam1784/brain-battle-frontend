@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>문제풀이</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/player-quiz.css" />
+</head>
+<body data-back="player-ready.html">
+  <main class="page" style="padding-top: 120px; padding-bottom: 150px">
+    <div class="card box">
+      <div class="tabs" id="tabs"></div>
+      <p class="number" id="title">문제</p>
+      <p class="sub lead" id="info">정답을 입력하고 다음 문제로 넘어가 보세요</p>
+      <div class="entry-box">
+        <div id="padSlot"></div>
+        <input id="answer" class="answer" placeholder="답을 입력하세요 (예: π/2, x², √3)" autocomplete="off" />
+        <p class="sub tip">전 문제로 돌아가 답을 고칠 수 있어요. 다 풀었다면 ‘최종 제출’을 눌러 주세요</p>
+        <p class="error" id="error"></p>
+      </div>
+    </div>
+  </main>
+  <div class="dock">
+    <button class="btn sub-btn" id="prev" type="button">← 전 문제</button>
+    <button class="btn sub-btn" id="next" type="button">다음 문제 →</button>
+    <button class="btn" id="submit" type="button">최종 제출</button>
+  </div>
+  <script src="js/common.js"></script>
+  <script src="js/player-quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>이름 입력</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/player-student.css" />
+</head>
+<body data-back="player-pin.html">
+  <main class="page middle">
+    <form class="entry" id="form">
+      <p class="entry-title"><b>이름을 입력해 주세요</b></p>
+      <p class="entry-sub">한글과 숫자를 섞어서 최대 8글자까지 쓸 수 있어요</p>
+      <div class="field tight">
+        <input id="student" maxlength="8" placeholder="이름을 입력해 주세요" autocomplete="off" />
+        <p class="counter" id="counter">0 / 8</p>
+        <p class="error error-pill" id="error" hidden></p>
+      </div>
+      <button class="btn" id="submit" type="submit">입장하기</button>
+    </form>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/player-student.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.box { display: flex; flex-direction: column; gap: 24px; max-width: 1160px; }
+.heading { display: flex; flex-direction: column; gap: 4px; text-align: center; }
+.big { font-size: 38px; font-weight: 700; }
+.table { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 24px; background: var(--cream); }
+.rows { display: flex; flex-direction: column; gap: 8px; }
+.line { display: grid; grid-template-columns: 90px 1fr 220px 220px; align-items: center; gap: 16px; padding: 12px 20px; font-size: 18px; font-weight: 500; }
+.head-line { padding: 4px 20px; color: var(--muted); font-size: 14px; }
+.rows .line { border-radius: 16px; background: #fff; }
+.line .strong { font-weight: 700; }
+.footer { display: flex; justify-content: center; }
+.exit { width: 280px; }
+.center { text-align: center; }
+@media (max-width: 760px) { .line { grid-template-columns: 56px 1fr 80px 80px; gap: 8px; padding: 12px; font-size: 15px; } }
