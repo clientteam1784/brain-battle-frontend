@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>수학 퀴즈 배틀</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/role.css" />
+</head>
+<body data-back="none">
+  <main class="page middle">
+    <div class="intro">
+      <h1>수학 퀴즈 배틀</h1>
+      <p>역할을 선택해 주세요</p>
+    </div>
+    <div class="roles">
+      <section class="role">
+        <div class="icon host">π</div>
+        <h2>HOST</h2>
+        <p>문제를 내서 게임을 시작해요</p>
+        <a class="btn go" href="teacher-login.html">방 만들기</a>
+      </section>
+      <section class="role">
+        <div class="icon player">?</div>
+        <h2>PLAYER</h2>
+        <p>PIN 번호로 입장해서 문제를 풀어요</p>
+        <a class="btn go" href="player-pin.html">입장하기</a>
+      </section>
+    </div>
+  </main>
+  <script src="js/common.js"></script>
+  <script>
+    // 첫 화면에 오면 이전 로그인 정보를 지운다.
+    sessionStorage.clear()
+  </script>
+</body>
+</html>

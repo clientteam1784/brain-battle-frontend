@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>준비화면 (PLAYER)</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/player-ready.css" />
+</head>
+<body data-back="player-student.html">
+  <main class="page middle">
+    <div class="card box">
+      <div class="head">
+        <div>
+          <p class="title" id="roomName">3학년 1반 수학 퀴즈</p>
+          <p class="sub">입장 완료! 잠시만 기다려 주세요</p>
+        </div>
+        <p class="pill" id="count">참가자 1 / 24</p>
+      </div>
+      <div class="panel">
+        <p class="label">참가자</p>
+        <div class="names"><span class="name me" id="me"></span></div>
+      </div>
+      <div class="footer">
+        <a class="wait">호스트가 게임을 시작하면 바로 문제가 나와요</a>
+      </div>
+    </div>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/player-ready.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>PIN 입력</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/player-pin.css" />
+</head>
+<body data-back="role.html">
+  <main class="page middle">
+    <form class="entry" id="form">
+      <p class="entry-title"><b>PIN번호</b>를 입력 후<br />수학퀴즈 속으로 빠져보세요</p>
+      <div class="field">
+        <input id="pin" class="pin" inputmode="numeric" maxlength="6" placeholder="PIN번호를 입력해 주세요. (6자리)" autocomplete="off" />
+        <p class="error error-pill" id="error" hidden></p>
+      </div>
+      <button class="btn" type="submit">확인</button>
+    </form>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/player-pin.js"></script>
+</body>
+</html>

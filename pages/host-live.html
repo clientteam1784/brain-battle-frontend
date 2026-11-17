@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>실시간 현황</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/host-live.css" />
+</head>
+<body data-back="host-ready.html">
+  <main class="page">
+    <div class="card box">
+      <div class="head">
+        <div>
+          <p class="title">실시간 현황</p>
+          <p class="sub">각 팀의 맞힌 개수와 순위, 수정 횟수를 확인해요</p>
+        </div>
+        <button class="btn red end" id="end" type="button">마감 (게임 종료)</button>
+      </div>
+      <div class="grid" id="teams"></div>
+      <p class="error" id="error"></p>
+    </div>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/host-live.js"></script>
+</body>
+</html>

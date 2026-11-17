@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>준비화면 (HOST)</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/host-ready.css" />
+</head>
+<body data-back="host-create.html">
+  <main class="page middle">
+    <div class="card box">
+      <div class="head">
+        <div>
+          <p class="title" id="roomName">수학 퀴즈 배틀</p>
+          <p class="sub">참가자를 기다리고 있어요</p>
+        </div>
+        <p class="pill" id="count">참가자 0 / 24</p>
+      </div>
+
+      <div class="body">
+        <div class="panel grow">
+          <p class="label">참가자</p>
+          <div class="names" id="chips"></div>
+        </div>
+        <div class="panel side">
+          <p class="label">핀 번호</p>
+          <p class="dots" id="pinText">● ● ● ● ● ●</p>
+          <button class="btn sub-btn small" id="togglePin" type="button">PIN 보기</button>
+        </div>
+      </div>
+
+      <p class="error center" id="error"></p>
+      <div class="footer"><button class="btn start" id="start" type="button">게임 시작하기</button></div>
+    </div>
+  </main>
+  <script src="js/common.js?v=3"></script>
+  <script src="js/host-ready.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:," />
+  <title>선생님 인증</title>
+  <link rel="stylesheet" href="css/common.css" />
+</head>
+<body data-back="role.html">
+  <main class="page middle">
+    <form class="entry" id="form">
+      <p class="entry-title"><b>선생님 인증</b></p>
+      <p class="entry-sub">선생님 인증 코드를 입력해 주세요</p>
+      <div class="field">
+        <input id="code" type="password" placeholder="인증 코드" autocomplete="off" />
+        <p class="error error-pill" id="error" hidden></p>
+      </div>
+      <button class="btn" id="submit" type="submit">확인</button>
+    </form>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/teacher-login.js"></script>
+</body>
+</html>
