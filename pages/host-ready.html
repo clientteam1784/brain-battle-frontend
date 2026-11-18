@@ -22,23 +22,20 @@
       <div class="body">
         <div class="panel grow">
           <p class="label">참가자</p>
-          <form class="add" id="addForm">
-            <input id="teamName" maxlength="8" placeholder="모둠 이름" autocomplete="off" />
-            <button class="btn sub-btn small" type="submit">모둠 추가</button>
-          </form>
           <div class="names" id="chips"></div>
         </div>
         <div class="panel side">
-          <p class="label">모둠 PIN</p>
+          <p class="label">핀 번호</p>
+          <p class="dots" id="dots">● ● ● ● ● ●</p>
           <button class="btn sub-btn small" id="togglePin" type="button">PIN 보기</button>
         </div>
       </div>
 
       <p class="error center" id="error"></p>
-      <div class="footer"><button class="btn start" id="start" type="button">게임 시작하기</button></div>
+      <div class="footer"><button class="btn start" id="start" type="button" disabled>게임 시작하기</button></div>
     </div>
   </main>
   <script src="js/common.js?v=3"></script>
-  <script src="js/host-ready.js?v=4"></script>
+  <script src="js/host-ready.js?v=7"></script>
 </body>
 </html>

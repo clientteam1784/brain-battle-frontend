@@ -16,7 +16,7 @@ nameInput.oninput = function () {
   showError('')
 }
 
-// 백엔드의 studentNumber(문자열) 칸에 이름을 넣어 로그인한다. 같은 모둠 안에서 이름이 같으면 같은 학생으로 본다.
+// 방 PIN 과 이름으로 입장한다. 이 이름이 선생님 화면의 참가자 목록에 나온다.
 document.getElementById('form').onsubmit = async function (e) {
   e.preventDefault()
   var name = nameInput.value.trim()
@@ -30,7 +30,7 @@ document.getElementById('form').onsubmit = async function (e) {
   }
   submitButton.disabled = true
   try {
-    var auth = await api('/auth/student', 'POST', { teamPin: pin, studentNumber: name }, true)
+    var auth = await api('/auth/join', 'POST', { roomPin: pin, name: name }, true)
     save('token', auth.accessToken)
     save('role', 'student')
     save('teamId', auth.teamId)
@@ -39,7 +39,7 @@ document.getElementById('form').onsubmit = async function (e) {
     location.href = 'player-ready.html'
   } catch (err) {
     if (err.status === 401) {
-      location.href = 'player-pin.html?error=1' // 없는 모둠 PIN
+      location.href = 'player-pin.html?error=1' // 없는 방 PIN
       return
     }
     showError(err.message)
