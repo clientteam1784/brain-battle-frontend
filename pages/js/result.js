@@ -27,24 +27,18 @@ async function showTeacher() {
   })
 }
 
-// 학생은 방 번호를 모르므로 방 번호를 1부터 넣어 보며 내 방의 순위표를 찾는다. (다른 방은 403)
-// shortcut: 방 번호 1~50 만 찾는다, 방이 그보다 많아지면 로그인 응답에 roomId 를 받도록 바꾼다.
 async function showStudent() {
   var total = (await api('/questions')).length
-  var ranking = null
-  for (var id = 1; id <= 50 && !ranking; id++) {
-    try { ranking = await api('/rooms/' + id + '/ranking') } catch (e) { if (e.status !== 403 && e.status !== 404) throw e }
-  }
-  if (!ranking) throw new Error('결과를 찾을 수 없어요.')
+  var ranking = await api('/rooms/' + load('roomId', 0) + '/ranking')
   document.getElementById('sub').textContent = '수고했어요! 최종 순위와 수정 횟수예요'
   addLine(head, '순위', ['이름', '맞힌 개수', '수정 횟수'], '', true)
   var mine = await api('/teams/' + load('teamId', 0) + '/progress')
   var myModify = 0
   mine.questions.forEach(function (q) { if (q.submitCount > 1) myModify += q.submitCount - 1 })
   ranking.forEach(function (team) {
-    // 다른 모둠의 수정 횟수는 학생이 볼 수 없어서 '-' 로 둔다. 내 모둠은 점수로 찾는다.
-    var isMine = team.currentCount === mine.correctCount
-    addLine(body, team.rank, [team.teamName + '팀', team.currentCount + ' / ' + total, isMine && ranking.filter(function (t) { return t.currentCount === mine.correctCount }).length === 1 ? myModify + '회' : '-'], rankClass(team.rank))
+    // 다른 모둠의 수정 횟수는 학생이 볼 수 없어서 '-' 로 둔다.
+    var isMine = team.teamId === load('teamId', 0)
+    addLine(body, team.rank, [team.teamName + '팀', team.currentCount + ' / ' + total, isMine ? myModify + '회' : '-'], rankClass(team.rank))
   })
 }
 

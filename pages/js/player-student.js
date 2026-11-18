@@ -34,6 +34,7 @@ document.getElementById('form').onsubmit = async function (e) {
     save('token', auth.accessToken)
     save('role', 'student')
     save('teamId', auth.teamId)
+    save('roomId', auth.roomId)
     save('studentNumber', name)
     location.href = 'player-ready.html'
   } catch (err) {
