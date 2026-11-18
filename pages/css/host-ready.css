@@ -6,8 +6,6 @@
 .names { display: flex; flex-wrap: wrap; gap: 12px; }
 .name { display: flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: #fff; font-size: 17px; font-weight: 700; }
 .name .x { color: var(--red); font-size: 14px; }
-.add { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.add input { flex: 1 1 220px; width: auto; height: 48px; font-size: 16px; }
 .dots { min-height: 39px; font-size: 28px; font-weight: 700; text-align: center; }
 .panel.side .dots { word-break: keep-all; }
 .footer { display: flex; justify-content: center; }

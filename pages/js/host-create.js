@@ -79,6 +79,7 @@ function openDialog(q) {
 
 // 문제 하나를 저장한다. keepOpen 이 true 면 창을 닫지 않고 다음 번호로 바꾼다. (+ 하나 더)
 async function saveQuestion(keepOpen) {
+  dialogError.textContent = '' // 이전 시도의 경고가 남지 않게 한다.
   var body = {
     questionNumber: Number(numberInput.value),
     answer: answerInput.value.trim(),
@@ -106,6 +107,7 @@ async function saveQuestion(keepOpen) {
   }
 }
 
+answerInput.oninput = function () { dialogError.textContent = '' }
 document.getElementById('add').onclick = function () { openDialog(null) }
 document.getElementById('close').onclick = function () { dialog.close() }
 document.getElementById('cancel').onclick = function () { dialog.close() }
@@ -125,11 +127,29 @@ document.getElementById('make').onclick = async function () {
       name: document.getElementById('roomName').value.trim() || '수학 퀴즈 배틀',
       max: maxPeople,
     })
-    save('pins', {})
     location.href = 'host-ready.html'
   } catch (err) {
     errorText.textContent = err.message
     button.disabled = false
+  }
+}
+
+// 이전에 만든 방이 남아 있으면(뒤로가기 등) 돌아가거나 끝낼 수 있게 한다. 끝난 방은 바로 버린다.
+var oldRoom = load('room', null)
+if (oldRoom && oldRoom.ended) {
+  sessionStorage.removeItem('room')
+  oldRoom = null
+}
+if (oldRoom) {
+  document.getElementById('running').hidden = false
+  document.getElementById('runningText').textContent = oldRoom.started ? '진행 중인 게임이 있어요.' : '참가자를 받고 있는 방이 있어요.'
+  document.getElementById('resume').onclick = function () {
+    location.href = oldRoom.started ? 'host-live.html' : 'host-ready.html'
+  }
+  document.getElementById('drop').onclick = function () {
+    if (!confirm('이 방을 끝낼까요? 참가자는 더 이상 이 방에 들어올 수 없어요.')) return
+    sessionStorage.removeItem('room')
+    document.getElementById('running').hidden = true
   }
 }
 

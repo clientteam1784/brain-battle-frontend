@@ -36,7 +36,10 @@ async function refresh() {
 
 // 백엔드에 게임 종료 API 가 아직 없어서, 선생님 화면만 결과 화면으로 이동한다.
 document.getElementById('end').onclick = function () {
-  if (confirm('게임을 마감하고 결과를 볼까요?')) location.href = 'result.html'
+  if (!confirm('게임을 마감하고 결과를 볼까요?')) return
+  room.ended = true
+  save('room', room) // 결과 화면이 이 방 정보를 읽는다. 방 만들기 화면이 끝난 방은 버린다.
+  location.href = 'result.html'
 }
 
 refresh()
