@@ -11,7 +11,7 @@ var pinVisible = false
 
 var chips = document.getElementById('chips')
 var errorText = document.getElementById('error')
-var pinText = document.getElementById('pinText')
+var pins = load('pins', {}) // 모둠 PIN 은 만들 때 한 번만 응답으로 오므로 탭에 저장해 둔다.
 var togglePin = document.getElementById('togglePin')
 
 document.getElementById('roomName').textContent = room.name
@@ -22,12 +22,12 @@ function draw() {
   
   chips.replaceChildren()
   teams.forEach(function (team) {
-    var chip = el('div', 'name', team.name)
+    var pin = pins[team.id] ? pins[team.id].split('').join(' ') : '-'
+    var chip = el('div', 'name', team.name + '  ' + (pinVisible ? pin : '● ● ● ● ● ●'))
     chip.appendChild(el('span', 'x', '✕'))
     chips.appendChild(chip)
   })
 
-  pinText.textContent = pinVisible && room.pin ? room.pin.split('').join(' ') : '● ● ● ● ● ●'
   togglePin.textContent = pinVisible ? 'PIN 숨기기' : 'PIN 보기'
 }
 
@@ -35,6 +35,27 @@ async function loadTeams() {
   try {
     teams = await api('/rooms/' + room.id + '/teams')
     draw()
+  } catch (err) {
+    errorText.textContent = err.message
+  }
+}
+
+document.getElementById('addForm').onsubmit = async function (e) {
+  e.preventDefault()
+  var input = document.getElementById('teamName')
+  var name = input.value.trim()
+  errorText.textContent = ''
+  if (!name) return
+  if (teams.length >= room.max) {
+    errorText.textContent = '최대 인원을 넘었어요.'
+    return
+  }
+  try {
+    var team = await api('/rooms/' + room.id + '/teams', 'POST', { teamName: name })
+    pins[team.id] = team.pin
+    save('pins', pins)
+    input.value = ''
+    loadTeams()
   } catch (err) {
     errorText.textContent = err.message
   }

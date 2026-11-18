@@ -8,7 +8,7 @@ function showError(message) {
 }
 
 // 틀린 PIN 으로 로그인에 실패하면 ?error=1 로 돌아와 오류를 보여 준다. (Figma 08)
-if (location.search.indexOf('error=1') !== -1) showError('방이 없어요. PIN 번호를 다시 확인해 주세요.')
+if (location.search.indexOf('error=1') !== -1) showError('모둠이 없어요. 모둠 PIN 번호를 다시 확인해 주세요.')
 
 pinInput.oninput = function () {
   pinInput.value = pinInput.value.replace(/\D/g, '').slice(0, 6)
@@ -19,7 +19,7 @@ pinInput.oninput = function () {
 document.getElementById('form').onsubmit = function (e) {
   e.preventDefault()
   if (pinInput.value.length !== 6) {
-    showError('PIN 번호 6자리를 입력해 주세요.')
+    showError('모둠 PIN 번호 6자리를 입력해 주세요.')
     return
   }
   save('pin', pinInput.value)
